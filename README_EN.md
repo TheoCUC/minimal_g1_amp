@@ -107,7 +107,7 @@ data_dict = {
 }
 ```
 
-The position and rotation of the body are obtained by `pinocchio` through IK solving. If you are not using the UnitreeG1 robot, you need to provide the `urdf` asset file for the corresponding robot.
+The position and rotation of the body are obtained by `pinocchio` through FK solving. If you are not using the UnitreeG1 robot, you need to provide the `urdf` asset file for the corresponding robot.
 
 > This script is edited from [Humanoid-AMP](https://github.com/linden713/humanoid_amp)
 

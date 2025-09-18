@@ -112,7 +112,7 @@ data_dict = {
 }
 ```
 
-其中身体的位置、旋转由 `pinocchio` 通过IK求解得到。如果你使用的不是UnitreeG1机器人，需要提供相应机器人的 `urdf` 资产文件。
+其中身体的位置、旋转由 `pinocchio` 通过FK求解得到。如果你使用的不是UnitreeG1机器人，需要提供相应机器人的 `urdf` 资产文件。
 
 > 该脚本修改自[Humanoid-AMP](https://github.com/linden713/humanoid_amp)
 
