@@ -121,3 +121,17 @@ data_dict = {
 ## 💰 修改Reward的比例
 
 如果希望机器人在实现类人动作的同时完成具体的task，需要适当设置 `style_reward` 与 `task_reward` 的比例。本仓库中的算法参数位于 `scripts/models`。
+
+## 🦾 训练Locomotion任务
+
+`amp_task/g1_amp_loco_env_cfg.py` 提供了如何训练一个Locomotion任务的示例。
+
+简单地说，需要给 `scene` 提供一个 `CommandsCfg` 来给机器人提供指令，这个任务中给机器人一个速度跟踪的指令。此外，需要给机器人提供一定的速度、指令的**观测** 和 **奖励**。
+
+需要注意的是，这里将AMP的参考动作换为了由`LAFAN`数据集重定向的行走步态，这是因为这条动作中有更丰富的各个方向上行走的及转向数据，可以避免单一动作数据使判别器收敛到局部最优解，影响Policy网络的正常表现。
+
+要训练Locomotion任务，需要在 `train` 与 `play` 脚本中将 `task` 修改为 `Isaac-G1-AMP-Loco-Walk-v0`，并且在 `scripts/models/amp.py` 中修改 `task_reward` 与 `style_reward` 的比例，可以将 0.5, 0.5 作为初始的参数。
+
+> 默认情况下，`task_reward` 为0， `style_reward` 为1， 这是为了单纯模仿参考轨迹。
+
+要让机器人的动作更加自然，可能还需要设计其他的奖励项来约束机器人。

@@ -162,7 +162,7 @@ class TerminationsCfg:
     torso_height = DoneTerm(func=mdp.root_height_below_minimum, params={"minimum_height": 0.5})
 
 
-MOTIONS_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "motions")
+MOTIONS_DIR = os.path.join(os.path.dirname((os.path.abspath(__file__))), "motions")
 
 @configclass
 class AMPCfg:

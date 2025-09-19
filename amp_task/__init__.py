@@ -26,3 +26,12 @@ gym.register(
         "env_cfg_entry_point": f"{__name__}.g1_amp_env_cfg:G1_DanceEnvCfg",
     },
 )
+
+gym.register(
+    id="Isaac-G1-AMP-Loco-Walk-v0",
+    entry_point=AMP_Env,
+    disable_env_checker=True,
+    kwargs={
+        "env_cfg_entry_point": f"{__name__}.g1_amp_loco_env_cfg:G1_AMP_Loco_EnvCfg",
+    },
+)
